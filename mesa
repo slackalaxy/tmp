@@ -1,0 +1,101 @@
+[3051/3392] Compiling Rust source src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs
+FAILED: src/gallium/frontends/rusticl/librusticl_opencl_gen.rlib 
+rustc -C linker=cc --color=always -C debug-assertions=no -C overflow-checks=no --crate-type rlib --edition=2021 --crate-name rusticl_opencl_gen --emit dep-info=src/gallium/frontends/rusticl/rusticl_opencl_gen.d --emit link=src/gallium/frontends/rusticl/librusticl_opencl_gen.rlib --out-dir src/gallium/frontends/rusticl/librusticl_opencl_gen.rlib.p -C metadata=b863b06@@rusticl_opencl_gen@sta -Aclippy::all -Aimproper_ctypes -Aunused_unsafe -Anon_camel_case_types -Anon_snake_case -Anon_upper_case_globals src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:7030:31
+     |
+7030 |     ["Alignment of cl_char8"][::std::mem::align_of::<cl_char8>() - 8usize];
+     |                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:7180:10
+     |
+7180 |         [::std::mem::align_of::<cl_char16__bindgen_ty_3>() - 8usize];
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:7471:32
+     |
+7471 |     ["Alignment of cl_uchar8"][::std::mem::align_of::<cl_uchar8>() - 8usize];
+     |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:7624:10
+     |
+7624 |         [::std::mem::align_of::<cl_uchar16__bindgen_ty_3>() - 8usize];
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:7809:32
+     |
+7809 |     ["Alignment of cl_short4"][::std::mem::align_of::<cl_short4>() - 8usize];
+     |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:7900:10
+     |
+7900 |         [::std::mem::align_of::<cl_short8__bindgen_ty_3>() - 8usize];
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:8264:33
+     |
+8264 |     ["Alignment of cl_ushort4"][::std::mem::align_of::<cl_ushort4>() - 8usize];
+     |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:8358:10
+     |
+8358 |         [::std::mem::align_of::<cl_ushort8__bindgen_ty_3>() - 8usize];
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:9060:30
+     |
+9060 |     ["Alignment of cl_int2"][::std::mem::align_of::<cl_int2>() - 8usize];
+     |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:9138:10
+     |
+9138 |         [::std::mem::align_of::<cl_int4__bindgen_ty_3>() - 8usize];
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:9511:31
+     |
+9511 |     ["Alignment of cl_uint2"][::std::mem::align_of::<cl_uint2>() - 8usize];
+     |                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+    --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:9589:10
+     |
+9589 |         [::std::mem::align_of::<cl_uint4__bindgen_ty_3>() - 8usize];
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+     --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:10862:32
+      |
+10862 |     ["Alignment of cl_float2"][::std::mem::align_of::<cl_float2>() - 8usize];
+      |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error[E0080]: evaluation of constant value failed
+     --> src/gallium/frontends/rusticl/rusticl_opencl_bindings.rs:10940:10
+      |
+10940 |         [::std::mem::align_of::<cl_float4__bindgen_ty_3>() - 8usize];
+      |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ attempt to compute `4_usize - 8_usize`, which would overflow
+
+error: aborting due to 14 previous errors
+
+For more information about this error, try `rustc --explain E0080`.
+[3056/3392] Compiling C object src/gallium/frontends/va/libva_st.a.p/picture_av1_enc.c.o
+../mesa-24.2.1/src/gallium/frontends/va/picture_av1_enc.c: In function 'av1_sequence_header':
+../mesa-24.2.1/src/gallium/frontends/va/picture_av1_enc.c:434:13: warning: variable 'still_pic' set but not used [-Wunused-but-set-variable]
+  434 |    unsigned still_pic = 0;
+      |             ^~~~~~~~~
+[3058/3392] Compiling C object src/gallium/frontends/va/libva_st.a.p/picture_hevc_enc.c.o
+ninja: build stopped: subcommand failed.
+=======> ERROR: Building '/var/work/packages/mesa#24.2.1-1.pkg.tar.xz' failed.
+
+-- Packages where update failed
+mesa
