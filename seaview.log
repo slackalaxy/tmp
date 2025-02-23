@@ -1,0 +1,38 @@
+# pkgmk -if -im -is
+=======> Building '/var/work/packages/seaview#5.0.5-1.pkg.tar.xz'.
+bsdtar -p -o -C /var/work/build/seaview-5.0.5/src -xf /var/work/sources/seaview_5.0.5.tar.gz
+cp seaview.desktop /var/work/build/seaview-5.0.5/src
++ build
++ cd seaview
++ sed -i '/^CFLAGS/s/=/+=/' Makefile
++ sed -i '8 c PDF_INC = /usr/include' Makefile
++ sed -i '9 c PDF_LIB = /usr/lib' Makefile
++ sed -i s:#PDF_PS_FLAGS:PDF_PS_FLAGS: Makefile
++ sed -i s:#LPDF:LPDF: Makefile
++ sed -i s:#HELPFILE:HELPFILE: Makefile
++ sed -i s:/share/doc/seaview:/share/seaview/: Makefile
++ sed -i s:#PHYMLNAME:PHYMLNAME: Makefile
++ CFLAGS='-O2 -march=x86-64 -pipe -fcommon'
++ CXXFLAGS='-O2 -march=x86-64 -pipe -fcommon'
++ make -j1
+g++ -c   -O2 -march=x86-64 -pipe -fcommon -Dunix -O3 -I.  -Icsrc  -DDEFAULT_HELPFILE=\"/usr/share/seaview//seaview.html\" -DPHYMLNAME=\"phyml\" -I/usr/include seaview.cxx
+g++ -c   -O2 -march=x86-64 -pipe -fcommon -Dunix -O3 -I.  -Icsrc  -DDEFAULT_HELPFILE=\"/usr/share/seaview//seaview.html\" -DPHYMLNAME=\"phyml\" -I/usr/include custom.cxx
+g++ -c   -O2 -march=x86-64 -pipe -fcommon -Dunix -O3 -I.  -Icsrc  -DDEFAULT_HELPFILE=\"/usr/share/seaview//seaview.html\" -DPHYMLNAME=\"phyml\" -I/usr/include use_mase_files.cxx
+In file included from use_mase_files.cxx:2:
+pdf_or_ps.h:98:11: error: 'Fl_Bitmask' does not name a type; did you mean 'Fl_Bitmap'?
+   98 |   virtual Fl_Bitmask create_bitmask(int w, int h, const uchar *array) {return 0;}
+      |           ^~~~~~~~~~
+      |           Fl_Bitmap
+pdf_or_ps.h:99:31: error: 'Fl_Bitmask' has not been declared
+   99 |   virtual void delete_bitmask(Fl_Bitmask bm) {}
+      |                               ^~~~~~~~~~
+In file included from use_mase_files.cxx:3:
+svg.h:76:11: error: 'Fl_Bitmask' does not name a type; did you mean 'Fl_Bitmap'?
+   76 |   virtual Fl_Bitmask create_bitmask(int w, int h, const uchar *array) {return 0;}
+      |           ^~~~~~~~~~
+      |           Fl_Bitmap
+svg.h:77:31: error: 'Fl_Bitmask' has not been declared
+   77 |   virtual void delete_bitmask(Fl_Bitmask bm) {}
+      |                               ^~~~~~~~~~
+make: *** [Makefile:58: use_mase_files.o] Error 1
+=======> ERROR: Building '/var/work/packages/seaview#5.0.5-1.pkg.tar.xz' failed.
